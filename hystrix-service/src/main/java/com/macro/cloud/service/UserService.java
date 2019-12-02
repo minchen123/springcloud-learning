@@ -38,7 +38,6 @@ public class UserService {
 
     @HystrixCommand(fallbackMethod = "getDefaultUser")
     public CommonResult getUser(Long id) {
-        String tt = "test";
         return restTemplate.getForObject(userServiceUrl + "/user/{1}", CommonResult.class, id);
     }
 
